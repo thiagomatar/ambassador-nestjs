@@ -16,7 +16,7 @@ import { RegisterDto } from './dtos/register.dto';
 import { UserService } from '../user/user.service';
 import * as bcrypt from 'bcryptjs';
 import { JwtService } from '@nestjs/jwt';
-import { Response, Request, request } from 'express';
+import { Response } from 'express';
 import { AuthGuard } from './auth.guard';
 
 @Controller()
@@ -49,6 +49,7 @@ export class AuthController {
       is_ambassador: false,
     });
   }
+
   @Post('admin/login')
   async login(
     @Body('email') email: string,
